@@ -19,3 +19,13 @@ from rest_framework import generics
 class CreatePostView(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class UpdatePostView(generics.UpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+
+class ListPostView(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
