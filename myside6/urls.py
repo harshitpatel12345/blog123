@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blog6.views import (CreatePostView, UpdatePostView, ListPostView,
-                         DeletePostView, CreateCategoryView)
+                         DeletePostView, CreateCategoryView, UpdateCategoryView, ListCategoryView, DeleteCategoryView)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,9 @@ urlpatterns = [
     path('list_post/', ListPostView.as_view(), name='list-post'),
     path('delete_post/<int:pk>', DeletePostView.as_view(), name='delete-post'),
     path('createcategory/', CreateCategoryView.as_view(), name='create-category'),
+    path('update_category/<int:pk>/', UpdateCategoryView.as_view(), name='update-category'),
+    path('list_category/', ListCategoryView.as_view(), name='list-category'),
+    path('delete_category/<int:pk>', DeleteCategoryView.as_view(), name='delete-category'),
 
 
 ]
