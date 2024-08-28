@@ -16,11 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog6.views import CreatePostView, UpdatePostView, ListPostView
+from blog6.views import (CreatePostView, UpdatePostView, ListPostView,
+                         DeletePostView, CreateCategoryView)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('create-post/', CreatePostView.as_view(), name='create-post'),
-    path('update-post/<int:pk>/', UpdatePostView.as_view(), name='update-post'),
-    path('list-post/', ListPostView.as_view(), name='update-post'),
+    path('create_post/', CreatePostView.as_view(), name='create-post'),
+    path('update_post/<int:pk>/', UpdatePostView.as_view(), name='update-post'),
+    path('list_post/', ListPostView.as_view(), name='list-post'),
+    path('delete_post/<int:pk>', DeletePostView.as_view(), name='delete-post'),
+    path('createcategory/', CreateCategoryView.as_view(), name='create-category'),
+
 
 ]
